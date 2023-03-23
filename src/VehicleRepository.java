@@ -1,8 +1,7 @@
-import java.util.Scanner;
+
 public class VehicleRepository {
 
     private Vehicle[] arrayVehicles;
-    private Automaker automaker;
 
     public VehicleRepository() {
         initializeVehicleArray();
@@ -41,9 +40,6 @@ public class VehicleRepository {
                 arrayVehicles[index] = new Vehicle(empty.getName(), "Empty");
             }
         return arrayVehicles;
-    }
-    public void setArrayVehicles(Vehicle[] arrayVehicles) {
-        this.arrayVehicles = arrayVehicles;
     }
     public Vehicle[] getArrayVehicles() {
        return arrayVehicles;

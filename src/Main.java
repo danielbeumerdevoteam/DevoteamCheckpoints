@@ -21,6 +21,7 @@ public class Main {
                 Vehicle searchModel = vehicleService.searchByModel(application.readString());
                 if(searchModel != null) {
                     System.out.println(searchModel.getAutomaker());
+                    inputUser = application.requestTerminate();
                 }
                     else {
                         System.out.println("Model not found in database.");

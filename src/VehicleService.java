@@ -1,10 +1,9 @@
-import java.util.Arrays;
 
 public class VehicleService {
     private VehicleRepository vehicleRepository;
     private String automaker;
     private Vehicle model;
-    private Vehicle[] arrayVehicles;
+    private final Vehicle[] arrayVehicles;
 
     public VehicleService(Vehicle[] arrayVehicles) {
         this.arrayVehicles = arrayVehicles;

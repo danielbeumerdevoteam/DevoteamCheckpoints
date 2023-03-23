@@ -2,7 +2,7 @@ public class Vehicle extends Automaker {
     private String color;
     private int year;
     private String model;
-    private String automaker;
+    private final String automaker;
 
     public Vehicle( String automaker, String model) {
         this.automaker = automaker;
@@ -20,13 +20,6 @@ public class Vehicle extends Automaker {
 
     public void setModel(String model) {
         this.model = model;
-    }
-
-    @Override
-    public String toString() {
-        return "Vehicle{" +
-                "model='" + model + '\'' +
-                '}';
     }
     public String getAutomaker() {
         return automaker;
