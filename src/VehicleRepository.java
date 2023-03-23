@@ -1,49 +1,63 @@
+import java.util.ArrayList;
+
 
 public class VehicleRepository {
 
-    private Vehicle[] arrayVehicles;
+    private ArrayList<Vehicle> vehicleList;
+    private final VehicleService vehicleService;
+    private Application application;
 
     public VehicleRepository() {
-        initializeVehicleArray();
+        initializeVehicleList();
+        this.vehicleService = new VehicleService(vehicleList, application);
     }
 
-    private Vehicle[] initializeVehicleArray() {
-
-        Automaker gm = new Automaker("GM");
-        Automaker hyundai = new Automaker("Hyundai");
-        Automaker volkswagen = new Automaker("Volkswagen");
-        Automaker audi = new Automaker("Audi");
-        Automaker mercedes = new Automaker("Mercedes");
-        Automaker peugeot = new Automaker("Peugeot");
-        Automaker empty = new Automaker("Empty");
-
-            arrayVehicles = new Vehicle[100];
-            arrayVehicles[0] = new Vehicle(gm.getName(), "Suburban");
-            arrayVehicles[1]= new Vehicle(gm.getName(), "Malibu");
-            arrayVehicles[2] = new Vehicle(gm.getName(), "Silverado");
-            arrayVehicles[3] = new Vehicle(hyundai.getName(), "Azera");
-            arrayVehicles[4] = new Vehicle(hyundai.getName(), "Sonata");
-            arrayVehicles[5] = new Vehicle(hyundai.getName(), "Veloster");
-            arrayVehicles[6] = new Vehicle(volkswagen.getName(), "Golf");
-            arrayVehicles[7] = new Vehicle(volkswagen.getName(), "Jetta");
-            arrayVehicles[8] = new Vehicle(volkswagen.getName(), "Polo");
-            arrayVehicles[9] = new Vehicle(audi.getName(), "A4");
-            arrayVehicles[10] = new Vehicle(audi.getName(), "Q7");
-            arrayVehicles[11] = new Vehicle(audi.getName(), "R8");
-            arrayVehicles[12] = new Vehicle(mercedes.getName(), "C 180");
-            arrayVehicles[13] = new Vehicle(mercedes.getName(), "C 200");
-            arrayVehicles[14] = new Vehicle(mercedes.getName(), "GLA 200");
-            arrayVehicles[15] = new Vehicle(peugeot.getName(), "206");
-            arrayVehicles[16] = new Vehicle(peugeot.getName(), "208");
-            arrayVehicles[17] = new Vehicle(peugeot.getName(), "2008");
-            for (int index = 18; index <100; index++){
-                arrayVehicles[index] = new Vehicle(empty.getName(), "Empty");
-            }
-        return arrayVehicles;
+    private void initializeVehicleList() {
+        int index = 0;
+        vehicleList = new ArrayList<>(50);
+        vehicleList.add(new Car(new Automaker("GM"), "Suburban", VehicleTypeEnum.CAR));
+        vehicleList.add(new Car(new Automaker("GM"), "Malibu", VehicleTypeEnum.CAR));
+        vehicleList.add(new Car(new Automaker("GM"), "Silverado", VehicleTypeEnum.CAR));
+        vehicleList.add(new Car(new Automaker("Hyundai"), "Azera", VehicleTypeEnum.CAR));
+        vehicleList.add(new Car(new Automaker("Hyundai"), "Sonata", VehicleTypeEnum.CAR));
+        vehicleList.add(new Car(new Automaker("Hyundai"), "Veloster", VehicleTypeEnum.CAR));
+        vehicleList.add(new Car(new Automaker("Volkswagen"), "Golf", VehicleTypeEnum.CAR));
+        vehicleList.add(new Car(new Automaker("Volkswagen"), "Jetta", VehicleTypeEnum.CAR));
+        vehicleList.add(new Car(new Automaker("Volkswagen"), "Polo", VehicleTypeEnum.CAR));
+        vehicleList.add(new Car(new Automaker("Audi"), "A4", VehicleTypeEnum.CAR));
+        vehicleList.add(new Car(new Automaker("Audi"), "Q7", VehicleTypeEnum.CAR));
+        vehicleList.add(new Car(new Automaker("Audi"), "R8", VehicleTypeEnum.CAR));
+        vehicleList.add(new Car(new Automaker("Mercedes"), "C 180", VehicleTypeEnum.CAR));
+        vehicleList.add(new Car(new Automaker("Mercedes"), "C 200", VehicleTypeEnum.CAR));
+        vehicleList.add(new Car(new Automaker("Mercedes"), "GLA 200", VehicleTypeEnum.CAR));
+        vehicleList.add(new Car(new Automaker("Peugeot"), "206", VehicleTypeEnum.CAR));
+        vehicleList.add(new Car(new Automaker("Peugeot"), "208", VehicleTypeEnum.CAR));
+        vehicleList.add(new Car(new Automaker("Peugeot"), "2008", VehicleTypeEnum.CAR));
+        vehicleList.add(new Motorcycle(new Automaker("BMW"), "Scrambler", VehicleTypeEnum.MOTORCYCLE));
+        vehicleList.add(new Motorcycle(new Automaker("Yamaha"), "MT07", VehicleTypeEnum.MOTORCYCLE));
+        vehicleList.add(new Motorcycle(new Automaker("Yamaha"), "XSR900", VehicleTypeEnum.MOTORCYCLE));
+        vehicleList.add(new Van(new Automaker("Ford"), "Transit", VehicleTypeEnum.VAN));
+        vehicleList.add(new Van(new Automaker("Mercedes"), "Sprinter", VehicleTypeEnum.VAN));
+        vehicleList.add(new Pickup(new Automaker("RAM"), "1500", VehicleTypeEnum.PICKUP));
+        vehicleList.add(new Other(new Automaker("Ford"), "3620 Tractor", VehicleTypeEnum.OTHERS));
     }
-    public Vehicle[] getArrayVehicles() {
-       return arrayVehicles;
+
+    public ArrayList<Vehicle> getVehicleList() {
+        return vehicleList;
     }
+
+    public ArrayList<Vehicle> createNewVehicle(int inputUser, Automaker automaker) {
+        switch (inputUser) {
+            case 1 -> vehicleService.addVehicle(new Car(automaker, VehicleTypeEnum.CAR));
+            case 2 -> vehicleService.addVehicle(new Motorcycle(automaker, VehicleTypeEnum.MOTORCYCLE));
+            case 3 -> vehicleService.addVehicle(new Van(automaker, VehicleTypeEnum.VAN));
+            case 4 -> vehicleService.addVehicle(new Truck(automaker, VehicleTypeEnum.TRUCK));
+            case 5 -> vehicleService.addVehicle(new Pickup(automaker, VehicleTypeEnum.PICKUP));
+            case 6 -> vehicleService.addVehicle(new Other(automaker, VehicleTypeEnum.OTHERS));
+            default -> throw new IllegalArgumentException("Invalid input");
+        };
+        return vehicleList;
+    }
+
 
 }
-

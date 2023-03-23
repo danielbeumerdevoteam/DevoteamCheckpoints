@@ -1,20 +1,21 @@
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
         Application application = new Application();
         VehicleRepository repository = new VehicleRepository();
-        Vehicle[] repositoryArray = repository.getArrayVehicles();
-        VehicleService vehicleService = new VehicleService(repositoryArray);
+        ArrayList <Vehicle> repositoryArray = repository.getVehicleList();
+        VehicleService vehicleService = new VehicleService(repositoryArray, application);
 
         int inputUser;
-        String model;
-        String automaker;
+
         do {
             application.printOpeningMenu();
             inputUser = application.readInteger();
              if (inputUser == 1) {
                 application.printAutomakerRequest();
                 String[] arrayModels = vehicleService.searchByAutomaker(application.readString());
-                application.printArray(arrayModels);
+                application.printArrayModels(arrayModels);
                 inputUser = application.requestTerminate();
             } else if (inputUser == 2) {
                 application.printModelRequest();
@@ -29,30 +30,42 @@ public class Main {
                     }
             } else if (inputUser == 3) {
                 application.printAutomakerRequest();
-                automaker = application.readString();
-                application.printModelRequest();
-                model = application.readString();
-                Vehicle newVehicle = new Vehicle(automaker, model);
-                repositoryArray = vehicleService.addVehicle(newVehicle);
+                Automaker automaker = new Automaker(application.readString());
+                application.printVehicleTypeRequest();
+                inputUser = application.readInteger();
+                repositoryArray = repository.createNewVehicle(inputUser, automaker);
                 inputUser = application.requestTerminate();
                 }
             else if (inputUser == 4 ){
+
                 application.printModelRequest();
                 Vehicle oldVehicle = vehicleService.searchByModel(application.readString());
+
                 application.printModelRequest();
                 String newModel = application.readString();
+
                 application.printAutomakerRequest();
                 String newAutomaker = application.readString();
-                Vehicle newVehicle = new Vehicle(newAutomaker, newModel);
-                repositoryArray = vehicleService.updateVehicle(oldVehicle, newVehicle);
+
+                repositoryArray = vehicleService.updateVehicle(oldVehicle, newAutomaker, newModel);
                 inputUser = application.requestTerminate();
                 }
-            else if(inputUser == 5){
-                application.printModelRequest();
-                Vehicle deleteModel = vehicleService.searchByModel(application.readString());
-                repositoryArray = vehicleService.deleteVehicle(deleteModel);
-                inputUser = application.requestTerminate();
-            }
+            else if(inputUser == 5) {
+                 application.printModelRequest();
+                 Vehicle deleteModel = vehicleService.searchByModel(application.readString());
+                 repositoryArray = vehicleService.deleteVehicle(deleteModel);
+                 inputUser = application.requestTerminate();
+             }
+                else if(inputUser == 6){
+                     application.printTypeRequest();
+                     vehicleService.searchByType(application.readString());
+                     //application.printArrayModels(arrayModels);
+                     inputUser = application.requestTerminate();
+                 }
+                else if (inputUser==7){
+                    vehicleService.generateReportFile();
+                    inputUser = application.requestTerminate();
+             }
         } while (inputUser != 0);
         application.printApplicationEnded();
     }
