@@ -1,6 +1,6 @@
 
 public class Automaker {
-    private String name;
+    public String name;
 
     public Automaker() {
     }
