@@ -1,0 +1,85 @@
+<mxfile host="app.diagrams.net" modified="2023-04-28T19:53:54.860Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36" etag="dkBOqIcHZs-DO_hORjgl" version="21.2.1" type="device">
+  <diagram name="Page-1" id="Mq6K6TAWMFtzzGSkO2i6">
+    <mxGraphModel dx="1518" dy="636" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="FF9HD_jjA8pSkZ4gVc-V-1" value="&lt;u&gt;Automakers&lt;/u&gt;&lt;br&gt;Automaker_ID&amp;nbsp;&lt;br&gt;first_name&lt;br&gt;last_name&lt;br&gt;Automaker_name&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;phonenumber" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+          <mxGeometry y="70" width="140" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="FF9HD_jjA8pSkZ4gVc-V-2" value="&lt;font style=&quot;font-size: 12px;&quot;&gt;&lt;u&gt;Vehicle details&lt;/u&gt;&lt;br&gt;Vehicle_ID&lt;br&gt;Automaker_ID&lt;br&gt;buy_price&lt;br&gt;sell_price&lt;br&gt;creation_date&lt;br&gt;&lt;/font&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+          <mxGeometry x="250" y="60" width="140" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="FF9HD_jjA8pSkZ4gVc-V-3" value="&lt;u&gt;Customers&lt;/u&gt;&lt;br&gt;Customer_ID&lt;br&gt;First_name&lt;br&gt;Last_name&lt;br&gt;Address" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+          <mxGeometry x="10" y="445" width="140" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="FF9HD_jjA8pSkZ4gVc-V-4" value="&lt;u&gt;Sales-Cus-Veh&lt;br&gt;&lt;/u&gt;SCV_ID&lt;br&gt;Sales_ID&lt;br&gt;Salesman_ID&lt;br&gt;Vehicle_ID&lt;br&gt;Customer_ID" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+          <mxGeometry x="140" y="260" width="120" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="FF9HD_jjA8pSkZ4gVc-V-6" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;entryX=-0.009;entryY=0.585;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="FF9HD_jjA8pSkZ4gVc-V-1" target="FF9HD_jjA8pSkZ4gVc-V-2" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="-80" y="148" as="sourcePoint" />
+            <mxPoint x="10" y="180" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="FF9HD_jjA8pSkZ4gVc-V-14" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERzeroToMany;startArrow=ERzeroToOne;rounded=0;entryX=0.997;entryY=0.179;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.75;exitY=1;exitDx=0;exitDy=0;" parent="1" source="FF9HD_jjA8pSkZ4gVc-V-2" target="FF9HD_jjA8pSkZ4gVc-V-4" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="390" y="200" as="sourcePoint" />
+            <mxPoint x="220" y="240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JoafArWiacuiSdNBPHYG-3" value="&lt;u&gt;Vehicle models&lt;/u&gt;&lt;br&gt;Vehicle_ID&lt;br&gt;model&lt;br&gt;year&lt;br&gt;color&lt;br&gt;type" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="490" y="70" width="110" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="lmQJpS4k9KlkOlTOdSix-2" value="&lt;u style=&quot;border-color: var(--border-color);&quot;&gt;Salesmen&lt;/u&gt;&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;Salesman_ID&lt;br&gt;Customer_ID&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;First_name&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;Last_name&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;Address" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+          <mxGeometry x="273" y="445" width="140" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="lmQJpS4k9KlkOlTOdSix-4" value="&lt;u&gt;Sales data&lt;/u&gt;&lt;br&gt;Sales_ID&lt;br&gt;sellprice&lt;br&gt;amount_sold&lt;br&gt;invoice_number&lt;br&gt;date" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+          <mxGeometry x="414" y="250" width="140" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="lmQJpS4k9KlkOlTOdSix-5" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERmandOne;startArrow=ERmandOne;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="FF9HD_jjA8pSkZ4gVc-V-4" target="lmQJpS4k9KlkOlTOdSix-4" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="350" y="450" as="sourcePoint" />
+            <mxPoint x="450" y="350" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="snNEDAyqLROGpB_P5kQM-3" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="JoafArWiacuiSdNBPHYG-3" target="FF9HD_jjA8pSkZ4gVc-V-2">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="150" y="150" as="sourcePoint" />
+            <mxPoint x="430" y="150" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="snNEDAyqLROGpB_P5kQM-6" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="lmQJpS4k9KlkOlTOdSix-2" target="FF9HD_jjA8pSkZ4gVc-V-3">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="350" y="520" as="sourcePoint" />
+            <mxPoint x="293" y="519.4100000000001" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="snNEDAyqLROGpB_P5kQM-7" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=0.75;entryDx=0;entryDy=0;" edge="1" parent="1" source="lmQJpS4k9KlkOlTOdSix-2" target="FF9HD_jjA8pSkZ4gVc-V-4">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="360" y="420" as="sourcePoint" />
+            <mxPoint x="240" y="400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="snNEDAyqLROGpB_P5kQM-8" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;exitX=1;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="lmQJpS4k9KlkOlTOdSix-2" target="snNEDAyqLROGpB_P5kQM-9">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="300" y="610" as="sourcePoint" />
+            <mxPoint x="520" y="730" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="snNEDAyqLROGpB_P5kQM-9" value="&lt;u style=&quot;border-color: var(--border-color);&quot;&gt;Adresses Salesmen&lt;/u&gt;&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;Salesman_ID&lt;br&gt;Country&lt;br&gt;City&lt;br&gt;Zip code&lt;br&gt;Street&lt;br&gt;House number&lt;br&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="280" y="680" width="120" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="snNEDAyqLROGpB_P5kQM-10" value="&lt;u style=&quot;border-color: var(--border-color);&quot;&gt;Adresses Customers&lt;/u&gt;&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;Customer_ID&lt;br&gt;Country&lt;br&gt;City&lt;br&gt;Zip code&lt;br&gt;Street&lt;br&gt;House number" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="50" y="680" width="120" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="snNEDAyqLROGpB_P5kQM-14" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;exitX=0.25;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="FF9HD_jjA8pSkZ4gVc-V-3">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="70" y="610" as="sourcePoint" />
+            <mxPoint x="50" y="740" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
