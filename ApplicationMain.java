@@ -8,6 +8,7 @@ public class ApplicationMain {
         AutomakerService automakerService = new AutomakerService(automakerRepository);
         VehicleService vehicleService = new VehicleService(repositoryArray, application, automakerService, automakerRepository);
         int inputUser;
+        //check
 
         do {
             application.printOpeningMenu();
